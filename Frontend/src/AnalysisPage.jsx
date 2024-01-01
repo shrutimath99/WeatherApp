@@ -142,10 +142,6 @@ function handleChange({ target }) {
 
   return (
     <>
-      {/* <div>Hello here for the Anaylsis</div>
-      <input label="city" name="city" id="city" onChange={handleChange} value={anaylsis.city}></input>
-      <button onClick={handleSubmit}>Submit</button>
-      <div> */}
       <h2 style = {{textAlign:"center", fontFamily:"serif"}} >
       <span style={{color: "#4285F4" }}>Analysis Details Page</span> 
       </h2>
@@ -272,7 +268,6 @@ function handleChange({ target }) {
           bar_graph_keys[anaylsisResp["co"]],
           bar_graph_keys[anaylsisResp["no2"]],
           bar_graph_keys[anaylsisResp["pm10"]],
-          // bar_graph_keys[anaylsisResp["pm2_5"]],
           bar_graph_keys[anaylsisResp["o3"]],
           bar_graph_keys[anaylsisResp["so2"]],
           bar_graph_keys[anaylsisResp["pm2_5"]]

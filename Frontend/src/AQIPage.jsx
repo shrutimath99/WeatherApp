@@ -58,7 +58,7 @@ useEffect(() => {
   const pie_data = Object.entries(aqi.components).map(([label, value], index) => ({
     id: index,
     value: value,
-    label: label.toUpperCase() // You can customize the label as needed
+    label: label.toUpperCase()
   }));
   console.log("dataArray", pie_data)
   setAQI({
@@ -69,7 +69,6 @@ useEffect(() => {
 }, [aqi.components]);
 
 function handleChange({ target }) {
-  // console.log("check target", target.value);
   setAQI({
     ...aqi,
     [target.name]: target.value,

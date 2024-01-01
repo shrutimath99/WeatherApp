@@ -51,7 +51,6 @@ function HomePage() {
 
   const handleSubmit = (event) =>{
     event.preventDefault();
-    console.log("Weather EVenttt",weather.city);
     axios({
       method: "post",
       url:
@@ -59,7 +58,6 @@ function HomePage() {
       data: {city: weather.city},
     })
       .then((data) => {
-        console.log("Data", data.data);
         setWeatherdata(true)
         setWeatherErrorResp(false)
         weather=[
@@ -148,13 +146,11 @@ function HomePage() {
         ]
         setApiResp(weather)
 
-        console.log("This is Setweatherdata", weather)
       })
       .catch((error) => {
         setWeatherErrorResp(true)
         setWeatherdata(false)
-        console.log("Error Keyss", Object.keys(error.response));
-        console.log("Response message",error.response.data)
+        
         setApiResp(error.response.data)
       });
   
@@ -162,7 +158,6 @@ function HomePage() {
 
 
 function handleChange({ target }) {
-  // console.log("check target", target.value);
   setWeather({
     ...weather,
     [target.name]: target.value,
@@ -174,7 +169,7 @@ function handleChange({ target }) {
     <>
       <div style={{marginTop:"100px",marginBottom:"50px"}}>
       <h2 style = {{textAlign:"center", fontFamily:"serif"}} >
-      <span style={{color: "#4285F4" }}>Weather App</span> 
+      <span style={{color: "#4285F4" }}>Weather Conditions and Air Quality Visualization</span> 
       </h2>
       <Paper
       component="form"
@@ -205,7 +200,7 @@ function handleChange({ target }) {
       {isWeatherdataRecv ?
        (
       <Container maxWidth="sm">
-  
+        <h4>This is tabluar representation of Current Weather of {weather.city} </h4>
          <TableContainer component={Paper}>
          <Table sx={{ maxWidth: 500}} aria-label="customized table">
            <TableHead>
@@ -231,7 +226,6 @@ function handleChange({ target }) {
        </Container>
       ) : (
         <p></p>
-        // <p>This content will be shown if the condition is false.</p>
       )}
       
     </div>
@@ -246,15 +240,9 @@ function handleChange({ target }) {
         </Container>
       ) : (
         <p></p>
-        // <p>This content will be shown if the condition is false.</p>
       )}
       
     </div>
-
-      {/* ------------------------------------------------------------ */}
-      {/* <div>Hello World</div>
-      <input label="city" name="city" id="city" onChange={handleChange} value={weather.city}></input>
-      <button onClick={handleSubmit}>Submit</button> */}
     </> 
   )
 }

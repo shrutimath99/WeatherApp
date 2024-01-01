@@ -24,6 +24,8 @@ To run this project, you will need to add the following environment variables
 `API_key`
 
 ## Installation and Run Locally
+
+**For the application to run both frontend and backend server should be running and system should have internet access**
 Frontend Installation - Navigate to Frontend folder on master branch 
 ```
 1. Run command
