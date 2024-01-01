@@ -12,6 +12,10 @@ Air Pollution API.
 
 **Unit Testing:** Pytest
 
+**Version Specification:**
+    node version = v18.16.0
+    python version = 3.10.9
+
 
 ## Environment Variables
 
